@@ -24,14 +24,21 @@ export class AppComponent {
   ngOnInit() {
     this.appService.getRates().subscribe(rates => {
       this.json = rates.currencies_alternatives;
-      console.log(this.json);
     });
   }
 
   dolarAPeso() : void {
-    this.valorDolarOficial = (parseInt(this.valorDolar) * this.json['ar_oficial_sell']).toFixed(2);
-    this.valorDolarSolidario = (parseInt(this.valorDolar) * (this.json['ar_oficial_sell'] * 1.65)).toFixed(2);
-    this.valorDolarBlue = (parseInt(this.valorDolar) * this.json['ar_blue_sell']).toFixed(2);
+    if (this.valorDolar) {
+      this.valorDolarOficial = (parseInt(this.valorDolar) * this.json['ar_oficial_sell']).toFixed(2);
+      this.valorDolarSolidario = (parseInt(this.valorDolar) * (this.json['ar_oficial_sell'] * 1.65)).toFixed(2);
+      this.valorDolarBlue = (parseInt(this.valorDolar) * this.json['ar_blue_sell']).toFixed(2);
+  
+    }
+    else {
+      this.valorDolarOficial = '';
+      this.valorDolarSolidario = '';
+      this.valorDolarBlue = '';
+    }
 
     if (!environment.production) {
       console.log(`Oficial: ${this.valorDolarOficial}`);
@@ -41,15 +48,22 @@ export class AppComponent {
   }
 
   pesoADolar() : void {
-    this.valorPesoOficial = (parseInt(this.valorPeso) * 1/this.json['ar_oficial_sell']).toFixed(2);
-    this.valorPesoSolidario = (parseInt(this.valorPeso) * 1/(this.json['ar_oficial_sell'] * 1.65)).toFixed(2);
-    this.valorPesoBlue = (parseInt(this.valorPeso) * 1/this.json['ar_blue_sell']).toFixed(2);
+    if (this.valorPeso) {
+      this.valorPesoOficial = (parseInt(this.valorPeso) * 1/this.json['ar_oficial_sell']).toFixed(2);
+      this.valorPesoSolidario = (parseInt(this.valorPeso) * 1/(this.json['ar_oficial_sell'] * 1.65)).toFixed(2);
+      this.valorPesoBlue = (parseInt(this.valorPeso) * 1/this.json['ar_blue_sell']).toFixed(2);
+  
+    }
+    else {
+      this.valorPesoOficial = '';
+      this.valorPesoSolidario = '';
+      this.valorPesoBlue = '';
+    }
 
     if (!environment.production) {
       console.log(`Oficial: ${this.valorPesoOficial}`);
       console.log(`Solidario: ${this.valorPesoSolidario}`);
       console.log(`Blue: ${this.valorPesoBlue}`);
     }
-
   }
 }
