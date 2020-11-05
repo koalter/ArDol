@@ -1,6 +1,6 @@
-import { environment } from '../environments/environment';
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
+import { Dinero } from './models/Dinero';
 
 @Component({
   selector: 'app-root',
@@ -9,61 +9,33 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   title = 'ArDol';
-  json: any;
-  valorDolar: string;
-  valorDolarOficial: string;
-  valorDolarSolidario: string;
-  valorDolarBlue: string;
-  valorPeso: string;
-  valorPesoOficial: string;
-  valorPesoSolidario: string;
-  valorPesoBlue: string;
+  exchangeRates: any;
+  peso: Dinero;
+  dolar: Dinero;
+  valorDolar: number;
+  valorPeso: number;
 
   constructor(public appService: AppService) {}
 
   ngOnInit() {
+    this.peso = new Dinero();
+    this.dolar = new Dinero();
     this.appService.getRates().subscribe(rates => {
-      this.json = rates.currencies_alternatives;
+      this.exchangeRates = rates.currencies_alternatives;
     });
   }
 
   dolarAPeso() : void {
-    if (this.valorDolar) {
-      this.valorDolarOficial = (parseInt(this.valorDolar) * this.json['ar_oficial_sell']).toFixed(2);
-      this.valorDolarSolidario = (parseInt(this.valorDolar) * (this.json['ar_oficial_sell'] * 1.65)).toFixed(2);
-      this.valorDolarBlue = (parseInt(this.valorDolar) * this.json['ar_blue_sell']).toFixed(2);
-  
-    }
-    else {
-      this.valorDolarOficial = '';
-      this.valorDolarSolidario = '';
-      this.valorDolarBlue = '';
-    }
-
-    if (!environment.production) {
-      console.log(`Oficial: ${this.valorDolarOficial}`);
-      console.log(`Solidario: ${this.valorDolarSolidario}`);
-      console.log(`Blue: ${this.valorDolarBlue}`);
-    }
+    this.dolar.setValor(this.valorDolar);
+    this.dolar.setOficial(parseInt(this.exchangeRates['ar_oficial_sell']));
+    this.dolar.setSolidario(parseInt(this.exchangeRates['ar_oficial_sell']) * 1.65);
+    this.dolar.setBlue(parseInt(this.exchangeRates['ar_blue_sell']));
   }
 
   pesoADolar() : void {
-    if (this.valorPeso) {
-      this.valorPesoOficial = (parseInt(this.valorPeso) * 1/this.json['ar_oficial_sell']).toFixed(2);
-      this.valorPesoSolidario = (parseInt(this.valorPeso) * 1/(this.json['ar_oficial_sell'] * 1.65)).toFixed(2);
-      this.valorPesoBlue = (parseInt(this.valorPeso) * 1/this.json['ar_blue_sell']).toFixed(2);
-  
-    }
-    else {
-      this.valorPesoOficial = '';
-      this.valorPesoSolidario = '';
-      this.valorPesoBlue = '';
-    }
-
-    if (!environment.production) {
-      console.log(`Oficial: ${this.valorPesoOficial}`);
-      console.log(`Solidario: ${this.valorPesoSolidario}`);
-      console.log(`Blue: ${this.valorPesoBlue}`);
-    }
+    this.peso.setValor(this.valorPeso);
+    this.peso.setOficial(parseInt(this.exchangeRates['ar_oficial_sell']));
+    this.peso.setSolidario(parseInt(this.exchangeRates['ar_oficial_sell']) * 1.65);
+    this.peso.setBlue(parseInt(this.exchangeRates['ar_blue_sell']));
   }
 }
