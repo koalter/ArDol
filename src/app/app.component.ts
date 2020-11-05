@@ -34,8 +34,8 @@ export class AppComponent {
 
   pesoADolar() : void {
     this.peso.setValor(this.valorPeso);
-    this.peso.setOficial(parseInt(this.exchangeRates['ar_oficial_sell']));
-    this.peso.setSolidario(parseInt(this.exchangeRates['ar_oficial_sell']) * 1.65);
-    this.peso.setBlue(parseInt(this.exchangeRates['ar_blue_sell']));
+    this.peso.setOficial(1/parseInt(this.exchangeRates['ar_oficial_sell']));
+    this.peso.setSolidario(1/parseInt(this.exchangeRates['ar_oficial_sell']) * 1.65);
+    this.peso.setBlue(1/parseInt(this.exchangeRates['ar_blue_sell']));
   }
 }
