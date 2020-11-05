@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Dinero } from '../models/Dinero';
 
 @Component({
@@ -9,7 +10,7 @@ import { Dinero } from '../models/Dinero';
 export class ArdolFormComponent implements OnInit {
 
   @Input() currency: string;
-  @Input() exchangeRates: string[];
+  @Input() exchangeRates: Observable<any>;
 
   parsedExchangeRates: number[];
   dinero: Dinero;
@@ -19,24 +20,25 @@ export class ArdolFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.dinero = new Dinero();
-    console.log(this.exchangeRates);
-    
-    switch (this.currency.toUpperCase()) {
-      case 'AR':
-        this.parsedExchangeRates = [
-          1/parseInt(this.exchangeRates['ar_oficial_sell']),
-          1/parseInt(this.exchangeRates['ar_oficial_sell']) * 1.65,
-          1/parseInt(this.exchangeRates['ar_blue_sell'])
-        ]
-        break;
-      case 'US':
-        this.parsedExchangeRates = [
-          parseInt(this.exchangeRates['ar_oficial_sell']),
-          parseInt(this.exchangeRates['ar_oficial_sell']) * 1.65,
-          parseInt(this.exchangeRates['ar_blue_sell'])
-        ]
-        break;
-    }
+
+    this.exchangeRates.subscribe(rates => {
+      switch (this.currency.toUpperCase()) {
+        case 'AR':
+          this.parsedExchangeRates = [
+            1/parseInt(rates.currencies_alternatives['ar_oficial_sell']),
+            1/parseInt(rates.currencies_alternatives['ar_oficial_sell']) * 1.65,
+            1/parseInt(rates.currencies_alternatives['ar_blue_sell'])
+          ]
+          break;
+        case 'US':
+          this.parsedExchangeRates = [
+            parseInt(rates.currencies_alternatives['ar_oficial_sell']),
+            parseInt(rates.currencies_alternatives['ar_oficial_sell']) * 1.65,
+            parseInt(rates.currencies_alternatives['ar_blue_sell'])
+          ]
+          break;
+      }
+    });
   }
 
   convertir(): void {
