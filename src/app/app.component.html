@@ -13,60 +13,8 @@
     </div>
 
     <div class="d-flex justify-content-around">
-        <div>
-            <div class="text-center mb-4">
-                <h2 class="h5 mb-3 font-weight-normal">Dolares a Pesos</h2>
-            </div>
-            <div class="form-label-group">
-                <input type="number" class="form-control" placeholder="Ingrese el monto (US$)" [(ngModel)]="valorDolar"
-                    required autofocus>
-                <label>Ingrese el monto (US$)</label>
-            </div>
-
-            <button class="btn btn-lg btn-primary btn-block" (click)="dolarAPeso()">Convertir</button><br>
-
-            <div class="form-label-group">
-                <input class="form-control" placeholder="Oficial" [value]="this.dolar.oficial" disabled>
-                <label>Oficial</label>
-            </div>
-
-            <div class="form-label-group">
-                <input class="form-control" placeholder="Solidario" [value]="this.dolar.solidario" disabled>
-                <label>Solidario</label>
-            </div>
-
-            <div class="form-label-group">
-                <input class="form-control" placeholder="Blue" [value]="this.dolar.blue" disabled>
-                <label>Blue</label>
-            </div>
-        </div>
-        <div>
-            <div class="text-center mb-4">
-                <h2 class="h5 mb-3 font-weight-normal">Pesos a Dolares</h2>
-            </div>
-            <div class="form-label-group">
-                <input type="number" class="form-control" placeholder="Ingrese el monto (AR$)" [(ngModel)]="valorPeso"
-                    required autofocus>
-                <label>Ingrese el monto (AR$)</label>
-            </div>
-
-            <button class="btn btn-lg btn-primary btn-block" (click)="pesoADolar()">Convertir</button><br>
-
-            <div class="form-label-group">
-                <input class="form-control" placeholder="Oficial" [value]="this.peso.oficial" disabled>
-                <label>Oficial</label>
-            </div>
-
-            <div class="form-label-group">
-                <input class="form-control" placeholder="Solidario" [value]="this.peso.solidario" disabled>
-                <label>Solidario</label>
-            </div>
-
-            <div class="form-label-group">
-                <input class="form-control" placeholder="Blue" [value]="this.peso.blue" disabled>
-                <label>Blue</label>
-            </div>
-        </div>
+        <ardol-form [currency]="'US'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
+        <ardol-form [currency]="'AR'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
     </div>
 
     <p class="mt-5 mb-3 text-muted text-center">v0.99</p>

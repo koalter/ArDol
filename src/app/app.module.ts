@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { ArdolFormComponent } from './ardol-form/ardol-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ArdolFormComponent
   ],
   imports: [
     BrowserModule,

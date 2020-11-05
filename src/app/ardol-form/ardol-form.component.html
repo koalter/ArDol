@@ -1,0 +1,27 @@
+<div>
+    <div class="text-center mb-4">
+        <h2 class="h5 mb-3 font-weight-normal">Dolares a Pesos</h2>
+    </div>
+    <div class="form-label-group">
+        <input type="number" class="form-control" placeholder="Ingrese el monto ({{this.currency}}$)" [(ngModel)]="valor"
+            required autofocus>
+        <label>Ingrese el monto ({{this.currency}}$)</label>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" (click)="convertir()">Convertir</button><br>
+
+    <div class="form-label-group">
+        <input class="form-control" placeholder="Oficial" [value]="this.dinero.oficial" disabled>
+        <label>Oficial</label>
+    </div>
+
+    <div class="form-label-group">
+        <input class="form-control" placeholder="Solidario" [value]="this.dinero.solidario" disabled>
+        <label>Solidario</label>
+    </div>
+
+    <div class="form-label-group">
+        <input class="form-control" placeholder="Blue" [value]="this.dinero.blue" disabled>
+        <label>Blue</label>
+    </div>
+</div>
