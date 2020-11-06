@@ -12,9 +12,14 @@
         <h2 class="h4 mb-3 font-weight-normal">Calculadora de dolares en Argentina</h2>
     </div>
 
+    <div *ngIf="isMobile" class="d-flex justify-content-around">
+        <button *ngIf="mobileModo != true" (click)="cambiarModo(true)" class="btn btn-primary">Dolares a Pesos</button>
+        <button *ngIf="mobileModo != false" (click)="cambiarModo(false)" class="btn btn-primary">Pesos a Dolares</button>
+    </div>
+
     <div class="d-flex justify-content-around">
-        <ardol-form [currency]="'US'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
-        <ardol-form [currency]="'AR'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
+        <ardol-form *ngIf="!isMobile || mobileModo == true" [currency]="'US'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
+        <ardol-form *ngIf="!isMobile || mobileModo == false" [currency]="'AR'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
     </div>
 
     <p class="mt-5 mb-3 text-muted text-center">v0.99</p>
