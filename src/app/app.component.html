@@ -17,7 +17,7 @@
         <button *ngIf="mobileModo != false" (click)="cambiarModo(false)" class="btn btn-primary">Pesos a Dolares</button>
     </div>
 
-    <div class="d-flex justify-content-around">
+    <div class="d-flex justify-content-around mt-3">
         <ardol-form *ngIf="!isMobile || mobileModo == true" [currency]="'US'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
         <ardol-form *ngIf="!isMobile || mobileModo == false" [currency]="'AR'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
     </div>

@@ -23,8 +23,6 @@ export class AppComponent {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
     this.isMobile = this.width <= 360;
-    console.log(this.isMobile);
-    console.log(this.mobileModo);
     
     this.exchangeRatesObservable = this.appService.getRates();
 
@@ -35,7 +33,6 @@ export class AppComponent {
 
   cambiarModo(modo: boolean): void {
     this.mobileModo = modo;
-    console.log(this.mobileModo);
   }
 
 }
