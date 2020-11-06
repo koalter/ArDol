@@ -22,7 +22,7 @@ export class AppComponent {
   ngOnInit() {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
-    this.isMobile = this.width <= 360;
+    this.isMobile = this.width <= 450;
     
     this.exchangeRatesObservable = this.appService.getRates();
 

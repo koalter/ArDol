@@ -45,7 +45,6 @@ export class ArdolFormComponent implements OnInit {
   }
 
   convertir(): void {
-    console.log(`Width: ${window.innerWidth}; Height: ${window.innerHeight}`)
     this.dinero.setValor(this.valor);
     this.dinero.setOficial(this.parsedExchangeRates[0]);
     this.dinero.setSolidario(this.parsedExchangeRates[1]);
