@@ -12,6 +12,7 @@ export class ArdolFormComponent implements OnInit {
   @Input() currency: string;
   @Input() exchangeRates: Observable<any>;
 
+  header: string;
   parsedExchangeRates: number[];
   dinero: Dinero;
   valor: number;
@@ -24,18 +25,20 @@ export class ArdolFormComponent implements OnInit {
     this.exchangeRates.subscribe(rates => {
       switch (this.currency.toUpperCase()) {
         case 'AR':
+          this.header = 'Pesos a Dolares';
           this.parsedExchangeRates = [
             1/parseInt(rates.currencies_alternatives['ar_oficial_sell']),
             1/parseInt(rates.currencies_alternatives['ar_oficial_sell']) * 1.65,
             1/parseInt(rates.currencies_alternatives['ar_blue_sell'])
-          ]
+          ];
           break;
         case 'US':
+          this.header = 'Dolares a Pesos';
           this.parsedExchangeRates = [
             parseInt(rates.currencies_alternatives['ar_oficial_sell']),
             parseInt(rates.currencies_alternatives['ar_oficial_sell']) * 1.65,
             parseInt(rates.currencies_alternatives['ar_blue_sell'])
-          ]
+          ];
           break;
       }
     });
