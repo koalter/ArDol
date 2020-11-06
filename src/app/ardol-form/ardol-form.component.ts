@@ -28,7 +28,7 @@ export class ArdolFormComponent implements OnInit {
           this.header = 'Pesos a Dolares';
           this.parsedExchangeRates = [
             1/parseInt(rates.currencies_alternatives['ar_oficial_sell']),
-            1/parseInt(rates.currencies_alternatives['ar_oficial_sell']) * 1.65,
+            1/(parseInt(rates.currencies_alternatives['ar_oficial_sell']) * 1.65),
             1/parseInt(rates.currencies_alternatives['ar_blue_sell'])
           ];
           break;
