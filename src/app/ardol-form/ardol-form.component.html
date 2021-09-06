@@ -3,12 +3,10 @@
         <h2 class="h5 mb-3 font-weight-normal">{{this.header}}</h2>
     </div>
     <div class="form-label-group">
-        <input type="number" class="form-control" placeholder="Ingrese el monto ({{this.currency}}$)" [(ngModel)]="valor"
+        <input type="number" class="form-control" placeholder="Ingrese el monto ({{this.currency}}$)" [(ngModel)]="this.dinero.valor"
             required autofocus>
         <label>Ingrese el monto ({{this.currency}}$)</label>
     </div>
-
-    <button class="btn btn-lg btn-primary btn-block" (click)="convertir()">Convertir</button><br>
 
     <div class="form-label-group">
         <input class="form-control" placeholder="Oficial" [value]="this.dinero.oficial" disabled>

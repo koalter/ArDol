@@ -26,7 +26,7 @@ export class ArdolFormComponent implements OnInit {
       switch (this.currency.toUpperCase()) {
         case 'AR':
           this.header = 'Pesos a Dolares';
-          this.parsedExchangeRates = [
+          this.dinero.exchangeRate = [
             1/parseInt(rates.currencies_alternatives['ar_oficial_sell']),
             1/(parseInt(rates.currencies_alternatives['ar_oficial_sell']) * 1.65),
             1/parseInt(rates.currencies_alternatives['ar_blue_sell'])
@@ -34,7 +34,7 @@ export class ArdolFormComponent implements OnInit {
           break;
         case 'US':
           this.header = 'Dolares a Pesos';
-          this.parsedExchangeRates = [
+          this.dinero.exchangeRate = [
             parseInt(rates.currencies_alternatives['ar_oficial_sell']),
             parseInt(rates.currencies_alternatives['ar_oficial_sell']) * 1.65,
             parseInt(rates.currencies_alternatives['ar_blue_sell'])
@@ -42,12 +42,5 @@ export class ArdolFormComponent implements OnInit {
           break;
       }
     });
-  }
-
-  convertir(): void {
-    this.dinero.setValor(this.valor);
-    this.dinero.setOficial(this.parsedExchangeRates[0]);
-    this.dinero.setSolidario(this.parsedExchangeRates[1]);
-    this.dinero.setBlue(this.parsedExchangeRates[2]);
   }
 }
