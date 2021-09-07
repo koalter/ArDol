@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Dinero } from '../models/Dinero';
+import { Dinero } from '../../models/Dinero';
 
 @Component({
   selector: 'ardol-form',
