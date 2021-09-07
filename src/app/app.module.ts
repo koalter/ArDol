@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { ArdolFormComponent } from './conversor-dolar/ardol-form/ardol-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConversorDolarComponent } from './conversor-dolar/conversor-dolar.component';
+import { ConversorSteamComponent } from './conversor-steam/conversor-steam.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArdolFormComponent,
-    ConversorDolarComponent
+    ConversorDolarComponent,
+    ConversorSteamComponent
   ],
   imports: [
     BrowserModule,
