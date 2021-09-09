@@ -3,7 +3,7 @@
         <div class="text-center mb-4">
             <h2 class="h5 mb-3 font-weight-normal">{{this.header}}</h2>
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" [ngbTooltip]="'CABA y conurbano bonaerense'">
             <div class="input-group-text">
                 <input type="checkbox" [(ngModel)]="this.amba" (click)="filtrarImpuestos()">
             </div>
@@ -24,7 +24,7 @@
         <ngb-accordion #acc="ngbAccordion">
             <ngb-panel title="Detalle impositivo">
                 <ng-template ngbPanelContent>
-                    <div *ngFor="let impuesto of this.impuestos" class="form-label-group" [ngbTooltip]="this.tooltip">
+                    <div *ngFor="let impuesto of this.impuestos" class="form-label-group">
                         <input class="form-control" [placeholder]="impuesto.nombre" [value]="calcularImpuesto(impuesto)" disabled>
                         <label>{{ impuesto.nombre }} ({{ impuesto.valor * 100 }}%)</label>
                     </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../app.service';
 import { ConversorSteam } from '../models/ConversorSteam';
 import { IImpuesto } from '../models/Interfaces';
+import { SteamService } from '../services/steam.service';
 
 @Component({
   selector: 'conversor-steam',
@@ -26,7 +26,7 @@ export class ConversorSteamComponent implements OnInit {
     return texto;
   }
 
-  constructor(public appService: AppService) { }
+  constructor(public steamService: SteamService) { }
 
   ngOnInit(): void {
     this.conversor = new ConversorSteam();
@@ -42,11 +42,11 @@ export class ConversorSteamComponent implements OnInit {
 
   calcularMonto(): string {
     return this.conversor.valor ? 
-      this.appService.getMontoSteam(this.conversor.valor, this.impuestos).toFixed(2) 
+      this.steamService.getMontoSteam(this.conversor.valor, this.impuestos).toFixed(2) 
       : '';
   }
 
   calcularImpuesto(impuesto: IImpuesto): string {
-    return this.appService.calcularImpuesto(this.conversor.valor, impuesto).toFixed(2);
+    return this.steamService.calcularImpuesto(this.conversor.valor, impuesto).toFixed(2);
   }
 }

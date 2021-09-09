@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { IImpuesto } from './models/Interfaces';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,20 +18,5 @@ export class AppService {
 
   public setWindowSize(width: number, height: number = null) {
     this.mobileView = width <= 450;
-  }
-
-  // TODO mover a un servicio dedicado (SteamService)
-  public getMontoSteam(montoInicial: number, impuestos: IImpuesto[]): number {
-    let montoFinal = montoInicial;
-    
-    for (let impuesto of impuestos) {
-      montoFinal += montoInicial * impuesto.valor;
-    }
-
-    return montoFinal;
-  }
-
-  public calcularImpuesto(base: number, impuesto: IImpuesto) {
-    return base * impuesto.valor;
   }
 }
