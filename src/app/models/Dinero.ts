@@ -1,46 +1,22 @@
 export class Dinero {
-    protected _valor: number;
-    protected _oficial: string;
-    protected _solidario: string;
-    protected _blue: string;
+    public valor: number;
+    public exchangeRate: number[];
 
     constructor() {
-        this._valor = 0;
-        this._oficial = '';
-        this._solidario = '';
-        this._blue = '';
-    }
-
-    public setValor(valor: number) {
-        this._valor = valor;
-    }
-    
-    public setOficial(exchangeRate: number) {
-        this._oficial = this._valor > 0 ? (this._valor * exchangeRate).toFixed(2) : '';
-    }
-
-    public setSolidario(exchangeRate: number) {
-        this._solidario = this._valor > 0 ? (this._valor * exchangeRate).toFixed(2) : '';
-    }
-
-    public setBlue(exchangeRate: number) {
-        this._blue = this._valor > 0 ? (this._valor * exchangeRate).toFixed(2) : '';
-    }
-    
-    public get valor() : number {
-        return this._valor;
+        this.valor = null;
+        this.exchangeRate = [];
     }
     
     public get oficial() : string {
-        return this._oficial;
+        return this.valor > 0 ? (this.valor * this.exchangeRate[0]).toFixed(2) : '';
     }
     
     public get solidario() : string {
-        return this._solidario;
+        return this.valor > 0 ? (this.valor * this.exchangeRate[1]).toFixed(2) : '';
     }
     
     public get blue() : string {
-        return this._blue;
+        return this.valor > 0 ? (this.valor * this.exchangeRate[2]).toFixed(2) : '';
     }
     
 }

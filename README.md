@@ -1,27 +1,14 @@
 # ArDol
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+ArDol es una aplicación cuya función es calcular montos (de dolares a pesos argentinos, y viceversa), tomando en cuenta el valor de cambio oficial, el cambio "solidario" en el que se incluye la retención por Ganancias más el impuesto PAIS, y el valor de cambio "blue".
 
-## Development server
+## Release Notes
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### v1.1:
+- Remoción del botón Convertir
+  - Ahora el cálculo se hace de manera automática sin necesidad de presionar ningún botón
+  - Este cambio fue hecho para aprovechar la mecánica del two-way binding de Angular y mejorar la UX
+- La interface se adapta a la pantalla de manera automáticamente
+  - Si bien desde el inicio la aplicación es adaptable a distintas pantallas, el redimensionado no se hacía de manera automática
+#### v1.0:
+- Despliegue de la primera versión

@@ -20,9 +20,7 @@ export class AppComponent {
   constructor(public appService: AppService) {}
 
   ngOnInit() {
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
-    this.isMobile = this.width <= 450;
+    this.setWindowSize(window.innerWidth, window.innerHeight);
     
     this.exchangeRatesObservable = this.appService.getRates();
 
@@ -35,4 +33,13 @@ export class AppComponent {
     this.mobileModo = modo;
   }
 
+  onResize(event) {
+    this.setWindowSize(event.target.innerWidth, event.target.innerHeight);
+  }
+
+  setWindowSize(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+    this.isMobile = width <= 450;
+  }
 }
