@@ -9,6 +9,7 @@ import { AppService } from '../services/app.service';
 })
 export class ConversorDolarComponent implements OnInit {
   
+  header: string = 'Calculadora de dolares';
   exchangeRatesObservable: Observable<any>;
   exchangeRates: string[];
   toggle: boolean;

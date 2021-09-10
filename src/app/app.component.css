@@ -1,0 +1,11 @@
+.navbar-brand {
+    font-weight: 700;
+}
+
+nav {
+    z-index: 1;
+}
+
+main {
+    height: 90%;
+}

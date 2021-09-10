@@ -1,3 +1,7 @@
+<div class="text-center mb-4">
+    <h1 class="h4 mb-3 font-weight-normal">{{ header }}</h1>
+</div>
+
 <div *ngIf="appService.mobileView" class="d-flex justify-content-around">
     <button *ngIf="toggle != true" (click)="cambiarModo(true)" class="btn btn-primary">Dolares a Pesos</button>
     <button *ngIf="toggle != false" (click)="cambiarModo(false)" class="btn btn-primary">Pesos a Dolares</button>
