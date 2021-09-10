@@ -2,30 +2,22 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./assets/fonts/material-icon/material-icons.css";
 
-html,
-body,
-app-root {
-  height: 100%;
+body {
+  height: 100vh;
 }
 
 body {
   background-color: #f5f5f5;
 }
 
-app-root {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+.bg-custom {
+  background-color: #e9ecef;
 }
 
 .form-signin {
   width: 100%;
   max-width: 800px;
   padding: 15px;
-  margin: auto;
 }
 
 .form-label-group {

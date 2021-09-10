@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Dinero } from '../models/Dinero';
+import { ConversorDolar } from '../../models/ConversorDolar';
 
 @Component({
   selector: 'ardol-form',
@@ -14,13 +14,13 @@ export class ArdolFormComponent implements OnInit {
 
   header: string;
   parsedExchangeRates: number[];
-  dinero: Dinero;
+  dinero: ConversorDolar;
   valor: number;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.dinero = new Dinero();
+    this.dinero = new ConversorDolar();
 
     this.exchangeRates.subscribe(rates => {
       switch (this.currency.toUpperCase()) {
