@@ -4,10 +4,13 @@
 
 body {
   height: 100vh;
+  background-color: #f5f5f5;
 }
 
-body {
-  background-color: #f5f5f5;
+.nuevo {
+  background: url('./assets/label_nuevo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .bg-custom {

@@ -4,6 +4,12 @@ ArDol es una aplicación cuya función es calcular montos (de dolares a pesos ar
 
 ## Release Notes
 
+#### v1.2:
+- (NUEVO) Calculadora de precios Steam
+  - Ahora los usuarios de Ardol podrán calcular el costo total de las compras que hagan por Steam/Battle.Net/Epic y demas plataformas digitales
+  - Incluye una barra desplegable que desglosa los impuestos agregados
+  - El usuario solo debe ingresar el monto que le figura en Steam y Ardol le dirá cuánto será el costo final
+- Cambios en la interface para integrar la nueva funcionalidad
 #### v1.1:
 - Remoción del botón Convertir
   - Ahora el cálculo se hace de manera automática sin necesidad de presionar ningún botón
