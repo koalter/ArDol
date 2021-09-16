@@ -1,26 +1,30 @@
-<div class="form-signin" (window:resize)="onResize($event)">
-    <div class="text-center mb-4">
-        <h1 class="h3 mb-3 font-weight-bold">
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash-stack" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 3H1a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1h-1z" />
-                <path fill-rule="evenodd"
-                    d="M15 5H1v8h14V5zM1 4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H1z" />
-                <path
-                    d="M13 5a2 2 0 0 0 2 2V5h-2zM3 5a2 2 0 0 1-2 2V5h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 13a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
-            </svg> {{title}}</h1>
-        <h2 class="h4 mb-3 font-weight-normal">Calculadora de dolares en Argentina</h2>
+<nav class="navbar navbar-expand-lg navbar-light bg-custom">
+    <a class="navbar-brand" routerLink="/">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash-stack" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 3H1a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1h-1z" />
+            <path fill-rule="evenodd"
+                d="M15 5H1v8h14V5zM1 4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H1z" />
+            <path
+                d="M13 5a2 2 0 0 0 2 2V5h-2zM3 5a2 2 0 0 1-2 2V5h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 13a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+        </svg>
+        {{ title }}
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dolares</a>
+        <a class="nav-link nuevo" routerLink="/steam" routerLinkActive="active">Steam</a>
+      </div>
     </div>
+</nav>
 
-    <div *ngIf="isMobile" class="d-flex justify-content-around">
-        <button *ngIf="mobileModo != true" (click)="cambiarModo(true)" class="btn btn-primary">Dolares a Pesos</button>
-        <button *ngIf="mobileModo != false" (click)="cambiarModo(false)" class="btn btn-primary">Pesos a Dolares</button>
+<main class="d-flex justify-content-center align-items-center">
+    <div class="form-signin" (window:resize)="onResize($event)">
+        <router-outlet></router-outlet>
+    
+        <p class="mt-5 mb-3 text-muted text-center">v{{ version }}</p>
     </div>
-
-    <div class="d-flex justify-content-around mt-3">
-        <ardol-form *ngIf="!isMobile || mobileModo == true" [currency]="'US'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
-        <ardol-form *ngIf="!isMobile || mobileModo == false" [currency]="'AR'" [exchangeRates]="this.exchangeRatesObservable"></ardol-form>
-    </div>
-
-    <p class="mt-5 mb-3 text-muted text-center">v1.1</p>
-</div>
+</main>

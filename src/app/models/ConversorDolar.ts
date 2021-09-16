@@ -1,4 +1,6 @@
-export class Dinero {
+import { IConversor } from "./Interfaces";
+
+export class ConversorDolar implements IConversor {
     public valor: number;
     public exchangeRate: number[];
 
