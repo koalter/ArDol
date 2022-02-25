@@ -4,6 +4,8 @@ ArDol es una aplicación cuya función es calcular montos (de dolares a pesos ar
 
 ## Release Notes
 
+#### v1.3:
+- Arreglado el routing para Netlify
 #### v1.2:
 - (NUEVO) Calculadora de precios Steam
   - Ahora los usuarios de Ardol podrán calcular el costo total de las compras que hagan por Steam/Battle.Net/Epic y demas plataformas digitales
