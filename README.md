@@ -4,6 +4,9 @@ ArDol es una aplicación cuya función es calcular montos (de dolares a pesos ar
 
 ## Release Notes
 
+#### v1.4:
+- Paquetes actualizados
+- Actualizada la alícuota de Ganancias para compras digitales (35% => 45%)
 #### v1.3:
 - Arreglado el routing para Netlify
 #### v1.2:

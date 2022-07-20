@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
 import { AppService } from './services/app.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { AppService } from './services/app.service';
 export class AppComponent {
 
   title = 'ArDol';
-  version = 1.3;
+  version = 1.4;
 
   constructor(public appService: AppService) {}
 
