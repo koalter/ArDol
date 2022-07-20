@@ -18,7 +18,7 @@ export class ConversorSteam implements IConversor {
                 nombre: 'IVA'
             },
             {
-                valor: 0.35,
+                valor: 0.45,
                 nombre: 'Impuesto a las Ganancias'
             },
             {

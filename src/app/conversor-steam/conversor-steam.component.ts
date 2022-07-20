@@ -17,7 +17,7 @@ export class ConversorSteamComponent implements OnInit {
   impuestos: IImpuesto[];
   
   get tooltip(): string {
-    let texto = `Monto Inicial + 8% Impuesto PAIS + 21% IVA + 35% Ganancias`;
+    let texto = `Monto Inicial + 8% Impuesto PAIS + 21% IVA + 45% Ganancias`;
 
     if (this.amba) {
       texto += ` + 2% IIBB (AMBA)`
