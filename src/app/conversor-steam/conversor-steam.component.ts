@@ -10,14 +10,14 @@ import { SteamService } from '../services/steam.service';
 })
 export class ConversorSteamComponent implements OnInit {
 
-  header: string = 'Calculadora para Steam';
+  header: string = 'Calculadora para compras digitales';
   conversor: ConversorSteam;
   currency: string;
   amba: boolean = true;
   impuestos: IImpuesto[];
   
   get tooltip(): string {
-    let texto = `Monto Inicial + 8% Impuesto PAIS + 21% IVA + 45% Ganancias`;
+    let texto = `Monto Inicial + 23% Impuesto PAIS + 21% IVA + 45% Ganancias`;
 
     if (this.amba) {
       texto += ` + 2% IIBB (AMBA)`

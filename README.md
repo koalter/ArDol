@@ -4,6 +4,8 @@ ArDol es una aplicación cuya función es calcular montos (de dolares a pesos ar
 
 ## Release Notes
 
+#### v1.5:
+- Actualizada la alícuota del Impuesto PAIS para compras digitales (8% => 23%)
 #### v1.4:
 - Paquetes actualizados
 - Actualizada la alícuota de Ganancias para compras digitales (35% => 45%)
