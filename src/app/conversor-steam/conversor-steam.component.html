@@ -17,7 +17,7 @@
         </div>
           
         <div class="form-label-group" [ngbTooltip]="this.tooltip">
-            <input class="form-control" placeholder="Monto Final" [value]="calcularMonto()" disabled>
+            <input class="form-control" placeholder="Monto Final" [value]="calcularMonto() | number: '1.2-2'" disabled>
             <label>Monto final ({{this.currency}}$) <i class="material-icons">info</i></label>
         </div>
         
@@ -25,7 +25,7 @@
             <ngb-panel title="Detalle impositivo">
                 <ng-template ngbPanelContent>
                     <div *ngFor="let impuesto of this.impuestos" class="form-label-group">
-                        <input class="form-control" [placeholder]="impuesto.nombre" [value]="calcularImpuesto(impuesto)" disabled>
+                        <input class="form-control" [placeholder]="impuesto.nombre" [value]="calcularImpuesto(impuesto) | number: '1.2-2'" disabled>
                         <label>{{ impuesto.nombre }} ({{ impuesto.valor * 100 }}%)</label>
                     </div>
                 </ng-template>

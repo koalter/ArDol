@@ -42,11 +42,11 @@ export class ConversorSteamComponent implements OnInit {
 
   calcularMonto(): string {
     return this.conversor.valor ? 
-      this.steamService.getMontoSteam(this.conversor.valor, this.impuestos).toFixed(2) 
+      this.steamService.getMontoSteam(this.conversor.valor, this.impuestos).toString() 
       : '';
   }
 
   calcularImpuesto(impuesto: IImpuesto): string {
-    return this.steamService.calcularImpuesto(this.conversor.valor, impuesto).toFixed(2);
+    return this.steamService.calcularImpuesto(this.conversor.valor, impuesto).toString();
   }
 }
