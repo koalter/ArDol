@@ -10,15 +10,15 @@ export class ConversorDolar implements IConversor {
     }
     
     public get oficial() : string {
-        return this.valor > 0 ? (this.valor * this.exchangeRate[0]).toFixed(2) : '';
+        return this.valor > 0 ? (this.valor * this.exchangeRate[0]).toString() : '';
     }
     
     public get solidario() : string {
-        return this.valor > 0 ? (this.valor * this.exchangeRate[1]).toFixed(2) : '';
+        return this.valor > 0 ? (this.valor * this.exchangeRate[1]).toString() : '';
     }
     
     public get blue() : string {
-        return this.valor > 0 ? (this.valor * this.exchangeRate[2]).toFixed(2) : '';
+        return this.valor > 0 ? (this.valor * this.exchangeRate[2]).toString() : '';
     }
     
 }
