@@ -3,23 +3,28 @@
         <h2 class="h5 mb-3 font-weight-normal">{{this.header}}</h2>
     </div>
     <div class="form-label-group">
-        <input type="number" class="form-control" placeholder="Ingrese el monto ({{this.currency}}$)" [(ngModel)]="this.dinero.valor"
+        <input type="number" class="form-control" 
+            placeholder="Ingrese el monto ({{this.currency}}$)" 
+            [(ngModel)]="this.dinero.valor"
             required autofocus>
         <label>Ingrese el monto ({{this.currency}}$)</label>
     </div>
 
     <div class="form-label-group">
-        <input class="form-control" placeholder="Oficial" [value]="this.dinero.oficial" disabled>
+        <input class="form-control" placeholder="Oficial" 
+            [value]="this.dinero.oficial | number: '1.2-2'" disabled>
         <label>Oficial</label>
     </div>
 
     <div class="form-label-group" ngbTooltip="Valor oficial más percepción de Ganancias e Impuesto PAIS">
-        <input class="form-control" placeholder="Solidario" [value]="this.dinero.solidario" disabled>
+        <input class="form-control" placeholder="Solidario" 
+            [value]="this.dinero.solidario | number: '1.2-2'" disabled>
         <label>Solidario <i class="material-icons">info</i></label>
     </div>
     
     <div class="form-label-group">
-        <input class="form-control" placeholder="Blue" [value]="this.dinero.blue" disabled>
+        <input class="form-control" placeholder="Blue" 
+            [value]="this.dinero.blue | number: '1.2-2'" disabled>
         <label>Blue</label>
     </div>
 </div>

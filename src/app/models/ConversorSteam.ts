@@ -10,7 +10,7 @@ export class ConversorSteam implements IConversor {
         this.exchangeRate = [1];
         this.impuestos = [
             {
-                valor: 0.08,
+                valor: 0.23,
                 nombre: 'Impuesto PAIS'
             },
             {

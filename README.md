@@ -4,6 +4,9 @@ ArDol es una aplicación cuya función es calcular montos (de dolares a pesos ar
 
 ## Release Notes
 
+#### v1.5:
+- Actualizada la alícuota del Impuesto PAIS (+15% en compra/venta de dolar solidario y compras digitales)
+- Agregado formato para los valores devueltos (ej. 1000 -> 1.000,00; 1000000 -> 1.000.000,00)
 #### v1.4:
 - Paquetes actualizados
 - Actualizada la alícuota de Ganancias para compras digitales (35% => 45%)
