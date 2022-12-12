@@ -4,7 +4,6 @@ ArDol es una aplicación cuya función es calcular montos (de dolares a pesos ar
 
 ## Release Notes
 
-
 #### v1.5.1
 - Revertido el multiplicador para dolar solidario.
 - Actualización a Angular 15
