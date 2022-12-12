@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConversorSteam } from '../models/ConversorSteam';
 import { IImpuesto } from '../models/Interfaces';
 import { SteamService } from '../services/steam.service';
+import { CONSTANTS } from '../../assets/constants';
 
 @Component({
   selector: 'conversor-steam',
@@ -30,7 +31,7 @@ export class ConversorSteamComponent implements OnInit {
 
   ngOnInit(): void {
     this.conversor = new ConversorSteam();
-    this.currency = 'AR';
+    this.currency = CONSTANTS.ARGENTINA_COUNTRY_CODE;
     this.impuestos = this.conversor.impuestos;
   }
 
